@@ -8,6 +8,20 @@ package com.mycompany.observer;
  *
  * @author yslai
  */
-public class cliente {
-    
+package observer;
+
+public class ClienteObserver implements Assinantes {
+
+    @Override
+    public void update(Produto produto) {
+        if (produto.getPromocao() == 1) {
+            System.out.println(
+                "Produto em promoção! Novo preço: R$ " + produto.getPreco()
+            );
+        } else {
+            System.out.println(
+                "Preço atual do produto: R$ " + produto.getPreco()
+            );
+        }
+    }
 }
