@@ -8,9 +8,21 @@ package com.mycompany.adapter;
  *
  * @author yslai
  */
-public class Adapter {
+package adapter;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+public class AberturaCircular {
+
+    private int raio;
+
+    public AberturaCircular(int raio) {
+        this.raio = raio;
+    }
+
+    public int getRaio() {
+        return raio;
+    }
+
+    public boolean podeEncaixar(Cilindro cilindro) {
+        return cilindro.obterRaio() <= this.raio;
     }
 }
