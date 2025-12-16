@@ -8,9 +8,23 @@ package com.mycompany.proxy;
  *
  * @author yslai
  */
-public class PROXY {
+package Proxy;
+
+public class Cliente {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        ServicoInterface servicoBase = new ServicoReal();
+
+        System.out.println("Tentativa com usuário comum:");
+        ServicoInterface acessoUsuario = new ServicoProxy(servicoBase, "usuario");
+        acessoUsuario.executar();
+
+        System.out.println();
+
+        System.out.println("Tentativa com admin:");
+        ServicoInterface acessoAdministrador = new ServicoProxy(servicoBase, "admin");
+        acessoAdministrador.executar();
     }
 }
+
