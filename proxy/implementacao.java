@@ -8,6 +8,29 @@ package com.mycompany.proxy;
  *
  * @author yslai
  */
-public class implementacao {
-    
+package Proxy;
+
+public class ServicoProxy implements ServicoInterface {
+
+    private ServicoReal servicoOriginal;
+
+    public ServicoProxy(ServicoReal servicoOriginal) {
+        this.servicoOriginal = servicoOriginal;
+    }
+
+    private boolean checarPermissao() {
+        System.out.println("Proxy: conferindo autorização de acesso...");
+        return true;
+    }
+
+    @Override
+    public void executar() {
+        if (checarPermissao()) {
+            System.out.println("Proxy: permissão concedida. Executando serviço real...");
+            servicoOriginal.executar();
+        } else {
+            System.out.println("Proxy: permissão recusada!");
+        }
+    }
 }
+
