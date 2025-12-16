@@ -8,6 +8,20 @@ package com.mycompany.adapter;
  *
  * @author yslai
  */
-public class cilindro {
-    
+public class PinoCilindrico {
+
+    private int raio;
+
+    public PinoCilindrico(int raio) {
+        this.raio = raio;
+    }
+
+    public PinoCilindrico() {
+        // construtor padrão
+    }
+
+    public int getRaio() {
+        return raio;
+    }
 }
+
