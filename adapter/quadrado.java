@@ -8,6 +8,17 @@ package com.mycompany.adapter;
  *
  * @author yslai
  */
-public class quadrado {
-    
+package adapter;
+
+public class BlocoQuadrado {
+
+    private int tamanhoLado;
+
+    public BlocoQuadrado(int tamanho) {
+        this.tamanhoLado = tamanho;
+    }
+
+    public int getLado() {
+        return tamanhoLado;
+    }
 }
