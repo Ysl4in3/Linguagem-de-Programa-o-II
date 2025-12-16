@@ -8,6 +8,17 @@ package com.mycompany.construtor;
  *
  * @author yslai
  */
-public class convidado {
-    
+package construtor;
+
+public class Convidado {
+
+    private String nomeCompleto;
+
+    public Convidado(String nome) {
+        this.nomeCompleto = nome;
+    }
+
+    public String obterNome() {
+        return nomeCompleto;
+    }
 }
