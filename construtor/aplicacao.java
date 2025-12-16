@@ -8,6 +8,14 @@ package com.mycompany.construtor;
  *
  * @author yslai
  */
-public class aplicacao {
-    
+package construtor;
+
+public class Aplicacao {
+
+    public static void main(String[] args) {
+
+        ListaFesta lista = ListaFesta.getInstancia();
+        lista.exibirLista();
+    }
 }
+
