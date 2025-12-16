@@ -8,6 +8,37 @@ package com.mycompany.proxy;
  *
  * @author yslai
  */
-public class servico {
-    
+package Proxy;
+
+// ServicoProxy.java
+public class ProxyAcesso implements ServicoInterface {
+
+    private ServicoInterface servicoProtegido;
+    private String perfilUsuario;
+
+    public ProxyAcesso(ServicoInterface servico) {
+        this.servicoProtegido = servico;
+        this.perfilUsuario = "convidado";
+    }
+
+    public ProxyAcesso(ServicoInterface servico, String perfil) {
+        this.servicoProtegido = servico;
+        this.perfilUsuario = perfil;
+    }
+
+    private boolean possuiPermissao() {
+        System.out.println("Proxy: checando permissões para o usuário '" + perfilUsuario + "'...");
+
+        return "admin".equalsIgnoreCase(perfilUsuario);
+    }
+
+    @Override
+    public void executar() {
+        if (possuiPermissao()) {
+            System.out.println("Proxy: permissão confirmada. Executando serviço real...");
+            servicoProtegido.executar();
+        } else {
+            System.out.println("Proxy: permissão negada. Ação cancelada.");
+        }
+    }
 }
