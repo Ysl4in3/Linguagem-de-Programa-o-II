@@ -8,6 +8,22 @@ package com.mycompany.observer;
  *
  * @author yslai
  */
-public class aplicacao {
-    
+package observer;
+
+public class Aplicacao {
+
+    public static void main(String[] args) {
+
+        Produto produto = new Produto("Sorvete de Coco Queimado", 10.0f);
+
+        Clientes clienteA = new Clientes();
+        Clientes clienteB = new Clientes();
+
+        produto.subscribe(clienteA);
+        produto.subscribe(clienteB);
+
+        produto.unsubscribe(clienteB);
+
+        produto.mainBussnesLogic(true);
+    }
 }
