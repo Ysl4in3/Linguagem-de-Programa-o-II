@@ -8,6 +8,10 @@ package com.mycompany.proxy;
  *
  * @author yslai
  */
-public class inter {
-    
+package Proxy;
+
+public interface Servico {
+
+    void executar();
 }
+
