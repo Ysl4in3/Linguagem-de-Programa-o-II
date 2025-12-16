@@ -8,6 +8,15 @@ package com.mycompany.constructor;
  *
  * @author yslai
  */
-public class veiculo {
-    
+package construtor_atv3;
+
+interface ConstrutorVeiculo {
+
+    void iniciar();
+    void definirMotor(String tipoMotor);
+    void definirGPS(String sistemaGPS);
+    void definirPainel(String tipoPainel);
+    void definirAssentos(int quantidadeAssentos);
+    Veiculo obterResultado();
 }
+
