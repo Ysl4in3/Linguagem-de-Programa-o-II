@@ -8,6 +8,13 @@ package com.mycompany.proxy;
  *
  * @author yslai
  */
-public class servinter {
-    
+package Proxy;
+
+public class ImplementacaoServico implements ServicoInterface {
+
+    @Override
+    public void executar() {
+        System.out.println("Serviço Real: operação em execução...");
+    }
 }
+
